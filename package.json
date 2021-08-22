@@ -6,8 +6,8 @@
   "scripts": {},
   "author": "Jan Kollars",
   "repository": {
-    "type" : "git",
-    "url" : "https://github.com/janKollars/eleventy-plugin-boxicons.git"
+    "type": "git",
+    "url": "https://github.com/janKollars/eleventy-plugin-boxicons.git"
   },
   "license": "MIT",
   "peerDependencies": {
