@@ -6,12 +6,16 @@ const prefixMapper = {
   'logos': 'bxl'
 }
 
+let _options
+
+const _optionsDefault = {
+  classNames: ''
+}
+
 module.exports = {
   initArguments: {},
   configFunction: function(eleventyConfig, options = {}) {
-    options = Object.assign({
-      // TODO add default values
-    }, options);
+    _options = Object.assign(_optionsDefault, options);
 
     eleventyConfig.addShortcode('boxicon', this.getBoxicon)
   },
@@ -28,6 +32,10 @@ module.exports = {
       prefix = 'regular'
       console.warn(`Boxicons only provides the types 'regular', 'solid' an 'logos'. Falling back to 'regular'`)
     }
-    return fs.readFileSync(`./node_modules/boxicons/svg/${type}/${prefix}-${iconName}.svg`, 'utf-8')
+    const svg = fs.readFileSync(`./node_modules/boxicons/svg/${type}/${prefix}-${iconName}.svg`, 'utf-8')
+    if (_options.classNames) {
+      return `<svg class="${_options.classNames}"` + svg.slice(4)
+    }
+    return svg
   }
 }
