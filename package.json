@@ -1,0 +1,16 @@
+{
+  "name": "eleventy-plugin-boxicons",
+  "version": "0.1.0",
+  "description": "Eleventy plugin which provides a shortcode to inline boxicons svgs",
+  "main": ".eleventy.js",
+  "scripts": {},
+  "author": "Jan Kollars",
+  "repository": {
+    "type" : "git",
+    "url" : "https://github.com/janKollars/eleventy-plugin-boxicons.git"
+  },
+  "license": "MIT",
+  "peerDependencies": {
+    "boxicons": ">= 2.0.0"
+  }
+}
